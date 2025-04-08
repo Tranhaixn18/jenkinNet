@@ -16,5 +16,13 @@ pipeline {
                 }
             }
         }
+
+        stage('SSH server'){
+            steps{
+                sshagent(['ssh-remote']) {
+                    sh 'ssh -o StrictHostKeyChecking=no -l admin@DESKTOP-7F6V45F 192.168.17.1 touch test.txt'
+                }
+            }
+        }
     }
 }
