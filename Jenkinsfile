@@ -10,8 +10,8 @@ pipeline {
         stage('Build') {
             steps {
                 withDockerRegistry(credentialsId: 'jenkin2', url: 'https://index.docker.io/v1/') {
-                    sh '''docker build -t haitran001/.net-v1 ./Jenkins
-                        docker push -t haitran001/.net-v1
+                    sh '''docker build -t haitran001/Jenkinsnet-v1 ./Jenkins
+                        docker push -t haitran001/Jenkinsnet-v1
                         '''
                 }
             }
