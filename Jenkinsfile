@@ -11,7 +11,7 @@ pipeline {
             steps {
                 withDockerRegistry(credentialsId: 'jenkin2', url: 'https://index.docker.io/v1/') {
                     sh '''docker build -t haitran001/jenkinsnet-v1 ./Jenkins
-                        docker push -t haitran001/jenkinsnet-v1
+                        docker push haitran001/jenkinsnet-v1
                         '''
                 }
             }
