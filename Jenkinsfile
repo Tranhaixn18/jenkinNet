@@ -9,7 +9,11 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Building..'
+                withDockerRegistry(credentialsId: 'jenkin2', url: 'docker.io') {
+                    sh '''docker build -t haitran001/.net-v1 ./Jenkins
+                        docker push -t haitran001/.net-v1
+                        '''
+                }
             }
         }
     }
